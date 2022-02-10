@@ -70,7 +70,7 @@ class Heat:
     def simulate(self):
         ani = animation.FuncAnimation(
             self.fig, self.run, init_func=self.init, frames=200, interval=50, repeat=False)
-        ani.save('heat.gif',writer='pillow',fps=25)
+        # ani.save('heat.gif',writer='pillow',fps=25)
 
         plt.tight_layout()
         plt.show()

@@ -82,6 +82,6 @@ ax.set_ylim(-yl, yl)
 plt.tight_layout()
 ani = animation.FuncAnimation(
     fig, animate, frames=64, interval=32, repeat=True)
-ani.save('inclined.gif', writer='pillow', fps=25)
+# ani.save('inclined.gif', writer='pillow', fps=25)
 
 plt.show()

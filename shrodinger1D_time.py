@@ -82,7 +82,7 @@ class Schrodinger:
         ani = animation.FuncAnimation(
             self.fig, self.run, frames=500, interval=25, repeat=False)
 
-        ani.save('shrodinger1D.gif',writer='pillow',fps=25)
+        # ani.save('shrodinger1D.gif',writer='pillow',fps=25)
 
         plt.tight_layout()
         plt.show()

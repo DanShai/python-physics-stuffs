@@ -106,7 +106,7 @@ class anima:
         ani = animation.FuncAnimation(self.fig, self.animate, init_func=self.init,
                                     frames=501, interval=50, repeat=False)
 
-        ani.save('shrodinger2D.gif',writer='pillow',fps=25)
+        # ani.save('shrodinger2D.gif',writer='pillow',fps=25)
         plt.show()
 
 

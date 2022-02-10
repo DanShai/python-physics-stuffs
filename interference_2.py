@@ -224,7 +224,7 @@ def run(z0=2e2):
         
         
     ani = animation.FuncAnimation(fig, animate, frames=fr, interval=fr//2, repeat=False )
-    ani.save('interference2gaus.gif',writer='pillow',fps=25)
+    # ani.save('interference2gaus.gif',writer='pillow',fps=25)
     plt.show()
 
 
@@ -255,7 +255,7 @@ def run3D(z0=2e2):
 
         
     ani = animation.FuncAnimation(fig, animate, frames=fr, interval=fr//2, repeat=False )
-    ani.save('interference3hex.gif',writer='pillow',fps=25)
+    # ani.save('interference3hex.gif',writer='pillow',fps=25)
    
     plt.tight_layout()    
     plt.show()
