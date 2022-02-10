@@ -39,7 +39,7 @@ class Heat:
         # v = (u[:-2] - 2 * u[1:-1] + u[2:])
         v = c*np.diff(ux, n=2)
         ux[1:-1] = ux[1:-1] + c * v  # [0,-1] boundary consditions
-        ax.plot(self.x, ux,  'k',
+        ax.plot(self.x, ux,  
                 color='purple', alpha=0.6)
         # ax.plot(np.arange(len(tm)), tm,  'k',
         #         color='g', alpha=0.6)
@@ -53,13 +53,14 @@ class Heat:
         x = self.x[p-10:p+10]
 
         y = a*x + b
-        ax.plot(x, y,  'k',
+        # ax.plot(x, y,'ro--', lw=3, markersize=8,  
+        #         color='red', alpha=0.4)
+        ax.plot(x, y,'--', lw=1, markersize=3,  
                 color='red', alpha=0.4)
 
         ax.scatter([x[0], x[-1]], [y[0], y[-1]],
                    s=10, c='pink', edgecolor='red')
 
-        plt.tight_layout()
 
     def simulate(self):
         ani = animation.FuncAnimation(
@@ -69,4 +70,5 @@ class Heat:
 
 if __name__ == "__main__":
     heat = Heat()
+    plt.tight_layout()
     heat.simulate()
