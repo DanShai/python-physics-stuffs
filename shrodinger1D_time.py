@@ -80,7 +80,9 @@ class Schrodinger:
         ax.legend(loc='upper left')
         ax.set_title('$(mL^2)V(x) = -10^4 \cdot n(x, \mu=L/2, \sigma=L/20)$')
         ani = animation.FuncAnimation(
-            self.fig, self.run, frames=5000, interval=25, repeat=False)
+            self.fig, self.run, frames=500, interval=25, repeat=False)
+
+        ani.save('shrodinger1D.gif',writer='pillow',fps=25)
 
         plt.tight_layout()
         plt.show()

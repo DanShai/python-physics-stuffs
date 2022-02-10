@@ -122,7 +122,7 @@ ln2, = plt.plot([], [], 'ro--', lw=3, markersize=8)
 ax.set_ylim(-4,4)
 ax.set_xlim(-4,4)
 ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50,repeat=False)
-# ani.save('pen.gif',writer='pillow',fps=25)
+ani.save('pendule.gif',writer='pillow',fps=25)
 
 
 plt.show()

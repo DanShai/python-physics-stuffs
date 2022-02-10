@@ -19,18 +19,22 @@ class Heat:
         self.t_mean = []
         # self.ax.plot(self.x, self.ux,  'k',
         #              color='g', alpha=0.6)
+        self.time_text = ''
         self.init()
 
     def init(self):
         self.ax.set_xlim(-2, 2)
         self.ax.set_ylim(0, 100)
+        self.time_text = self.ax.text(0.5, 0.95, '', fontsize=10,
+                        bbox=dict(facecolor='white', edgecolor='black'), 
+                        transform=self.ax.transAxes)
         #plt.autoscale(enable=False, axis='y')
 
     def run(self, f):
         ux, ax, tm = self.ux, self.ax, self.t_mean
         m = ux.mean()
         # tm.append(m)
-        print('frame ', f, 'mean temp ', m, 'max temp ', ux.max())
+        # print('frame ', f, 'mean temp ', m, 'max temp ', ux.max())
         # print('ux ', self.ux.shape)
         ax.cla()
         self.init()
@@ -60,15 +64,18 @@ class Heat:
 
         ax.scatter([x[0], x[-1]], [y[0], y[-1]],
                    s=10, c='pink', edgecolor='red')
+        self.time_text.set_text('f={:.2f}'.format(f))
 
 
     def simulate(self):
         ani = animation.FuncAnimation(
-            self.fig, self.run, init_func=self.init, frames=10000, interval=10, repeat=False)
+            self.fig, self.run, init_func=self.init, frames=200, interval=50, repeat=False)
+        ani.save('heat.gif',writer='pillow',fps=25)
+
+        plt.tight_layout()
         plt.show()
 
 
 if __name__ == "__main__":
     heat = Heat()
-    plt.tight_layout()
     heat.simulate()

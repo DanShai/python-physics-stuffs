@@ -57,7 +57,7 @@ print(E.shape, Psi.shape)
 def Psi_n(n): return Psi.T[n].reshape((N, N))
 
 
-plt.figure(figsize=(9, 9))
+plt.figure(figsize=(5,5))
 plt.subplot(211)
 plt.contourf(X, Y, Psi_n(4)**2, 20)
 
@@ -96,7 +96,7 @@ class anima:
     def animate(self,f):
         if f % 10 == 0:
             self.n = (self.n+1)%10
-            plt.cla()
+        plt.cla()
         self.psi = Psi_n(self.n)
         self.ax.view_init(elev=10, azim=f)
         self.ax.plot_surface(self.X, self.Y, self.psi**2, cmap=self.my_cmap,
@@ -104,8 +104,9 @@ class anima:
 
     def show_anim(self):
         ani = animation.FuncAnimation(self.fig, self.animate, init_func=self.init,
-                                    frames=1001, interval=10, repeat=False)
+                                    frames=501, interval=50, repeat=False)
 
+        ani.save('shrodinger2D.gif',writer='pillow',fps=25)
         plt.show()
 
 

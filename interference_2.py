@@ -224,6 +224,7 @@ def run(z0=2e2):
         
         
     ani = animation.FuncAnimation(fig, animate, frames=fr, interval=fr//2, repeat=False )
+    ani.save('interference2gaus.gif',writer='pillow',fps=25)
     plt.show()
 
 
@@ -254,6 +255,8 @@ def run3D(z0=2e2):
 
         
     ani = animation.FuncAnimation(fig, animate, frames=fr, interval=fr//2, repeat=False )
+    ani.save('interference3hex.gif',writer='pillow',fps=25)
+   
     plt.tight_layout()    
     plt.show()
 
@@ -268,9 +271,9 @@ U = Uzk(u0=U0,z=1e2, lam=lam)
 show_U(u=U,title='U')
 surf_plot(u=U,title='U')
 show_m()
+run(z0=.8e3)
 
 U0 = makeU0(u0='hexa')
 U = Uzk(u0=U0,z=100, lam=lam)
-# run(z0=.8e3)
 run3D(z0=.8e3)
 
