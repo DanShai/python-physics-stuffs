@@ -62,7 +62,7 @@ class Schrodinger:
         self.ln2.set_data(self.x, phi)
         self.ln3.set_data(self.x, phi2)
         self.time_text.set_text(
-            '$(10^4 mL^2)^{-1}t=$'+'{:.1f} psi={:.1f}%'.format(100*f*self.dt*1e4, np.max(phi)))
+            'Frame '+'{:.0f} psi={:.1f}%'.format(100*f*self.dt*1e4, np.max(phi)))
 
         # ax.plot(self.x, self.V,
         #         color='red', alpha=0.4)
@@ -78,7 +78,7 @@ class Schrodinger:
         ax.set_ylabel('$|\psi(x)|^2$', fontsize=20)
         ax.set_xlabel('$x/L$', fontsize=20)
         ax.legend(loc='upper left')
-        ax.set_title('$(mL^2)V(x) = -10^4 \cdot n(x, \mu=L/2, \sigma=L/20)$')
+        ax.set_title('evolution in time')
         ani = animation.FuncAnimation(
             self.fig, self.run, frames=500, interval=25, repeat=False)
 
